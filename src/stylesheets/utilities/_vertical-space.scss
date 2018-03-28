@@ -1,0 +1,23 @@
+.u-vertical-space {
+  @include fluid-type(margin-bottom margin-top, 18.75em, 78.75em, 1rem, 2rem);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.u-vertical-space--center {
+  text-align: center;
+}
+
+.u-vertical-space--large {
+  @include fluid-type(margin-bottom margin-top, 18.75em, 78.75em, 2rem, 4rem);
+}
+
+.u-vertical-space--small {
+  @include fluid-type(margin-bottom margin-top, 18.75em, 78.75em, 0.5rem, 1rem);
+}

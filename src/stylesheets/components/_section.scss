@@ -1,0 +1,21 @@
+.c-section {
+  @include fluid-type(padding-bottom padding-top, 18.75em, 78.75em, 2em, 4em);
+}
+
+.c-section--deep-sea {
+  background-color: $deep-sea;
+  color: $white;
+}
+
+.c-section--white {
+  border-bottom: $deep-sea solid 0.5em;
+  padding-bottom: 0;
+
+  &::after {
+    background-color: $deep-sea;
+    content: "";
+    display: block;
+    height: 0.25em;
+    margin-bottom: 0.25em;
+  }
+}

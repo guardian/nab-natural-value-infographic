@@ -1,0 +1,7 @@
+html {
+  @include fluid-type(font-size, 18.75em, 78.75em, 0.875em, 1.125em);
+  background-color: $white;
+  color: $mine-shaft;
+  font-family: "TS3 Text Sans", sans-serif;
+  line-height: 1.5;
+}

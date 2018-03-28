@@ -1,0 +1,69 @@
+.c-card {}
+
+.c-card--border {}
+
+.c-card--deep-sea {}
+
+.c-card--shadow {
+  margin: 1em 0 0 1em;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    background-image: svg-encode('<svg fill="#{$pablo}" viewBox="0 0 4 4"><circle cx=".5" cy=".5" r=".5"/><circle cx="2.5" cy="2.5" r=".5"/></svg>');
+    background-size: 0.75em;
+    content: "";
+    height: 100%;
+    left: -1em;
+    position: absolute;
+    top: -1em;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.c-card__content {
+  @include fluid-type(padding, 18.75em, 78.75em, 1em, 2em);
+
+  .c-card--border & {
+    background-color: $white;
+    border: $deep-sea solid 1px;
+    box-shadow: 0 0.5em $aqua-forest;
+    margin-bottom: 0.5em;
+  }
+
+  .c-card--deep-sea & {
+    background-color: mix($deep-sea, $white, 25%);
+  }
+
+  .c-card--layer-1 &,
+  .c-card--layer-2 & {
+    position: relative;
+
+    &::after {
+      background-repeat: no-repeat;
+      background-size: 4em;
+      content: "";
+      pointer-events: none;
+      position: absolute;
+    }
+  }
+
+  .c-card--layer-1 &::after {
+    background-image: svg-encode('<svg viewBox="0 0 65.18 11.92"><path fill="#7D756A" d="M56.97 11.92L50 4.95l-6.96 6.97-6.97-6.97-6.97 6.97-6.96-6.97-6.97 6.97L8.2 4.95l-5.73 5.73L0 8.2 8.2 0l6.97 6.97L22.14 0l6.96 6.97L36.07 0l6.97 6.97L50 0l6.97 6.97 5.73-5.73 2.48 2.47z"/></svg>'), svg-encode('<svg viewBox="0 0 44.21 28.64"><path fill="#E5E4E2" d="M34.67 28.64l-19.1-19.1L44.21 0l-9.54 28.64zM22.05 11.08l11.09 11.09 5.54-16.63-16.63 5.54z"/><path fill="#7D756A" d="M12.85 5.503l2.476 2.475L2.478 20.826.003 18.351z"/><path fill="#7D756A" d="M2.478 5.51L15.326 18.36l-2.475 2.474L.003 7.985z"/></svg>');
+    background-position: 87.5% 0, 100% 100%;
+    bottom: -1em;
+    left: 0;
+    right: 2em;
+    top: -2em;
+  }
+
+  .c-card--layer-2 &::after {
+    background-image: svg-encode('<svg viewBox="0 0 81.08 112.75"><path fill="#3A3A3A" d="M0 20.57h20.46v20.46H0z"/><circle cx="40.24" cy="84.53" r="28.22" fill="#008674"/><path fill="#71AF7E" d="M38.66 0h30.97v30.97H38.66z"/><path fill="#3A3A3A" d="M62.49 103.83L25.31 66.64l55.78-18.59-18.6 55.78zM31.78 68.17l29.18 29.18 14.59-43.76-43.77 14.58z"/></svg>'), svg-encode('<svg viewBox="0 0 87.97 133.67"><path fill="#C0DBD8" d="M50.39 101.51c-.48-.92-.88-1.87-1.21-2.86l25.18-25.18c.99.33 1.95.74 2.86 1.21l-26.83 26.83zm-1.84-5.21l23.46-23.46c-1.19-.24-2.43-.37-3.69-.39L48.17 92.61c.01 1.26.14 2.5.38 3.69zm39.04-7.89l-23.46 23.46c1.19.24 2.43.37 3.69.39L87.97 92.1c-.01-1.26-.14-2.49-.38-3.69zm-6.21-10.85c-.72-.65-1.49-1.24-2.29-1.78l-27.6 27.6c.54.81 1.13 1.57 1.78 2.29l28.11-28.11zm3.27 3.78c-.54-.81-1.13-1.57-1.78-2.3l-28.11 28.11c.72.65 1.49 1.24 2.29 1.78l27.6-27.59zm-13.66 30.71c8.66-1.27 15.5-8.11 16.77-16.77l-16.77 16.77zm15.97-25.98c-.33-.99-.74-1.95-1.21-2.86l-26.83 26.83c.92.47 1.87.88 2.86 1.21l25.18-25.18zM65.15 72.66c-8.66 1.28-15.5 8.12-16.77 16.77l16.77-16.77z"/><path fill="#3A3A3A" d="M37.96 20.46H17.5V0h20.46v20.46zM5.95 66.19l11.28 3.02 3.02-11.28 11.28 3.02 3.02-11.28 11.28 3.02 3.02-11.28 9.59 2.57.91-3.38-12.97-3.48-3.01 11.28-11.28-3.02-3.02 11.28-11.28-3.02-3.02 11.28L3.48 61.9 0 74.87l3.38.91 2.57-9.59zm31.35 48.33H18.16v19.15H37.3v-19.15zm-15.64 3.5H33.8v12.15H21.66v-12.15z"/></svg>');
+    background-position: 100% 0, 0 100%;
+    bottom: 0;
+    left: -0.8em;
+    right: -0.625em;
+    top: 0;
+  }
+}

@@ -1,0 +1,44 @@
+.c-title {
+  @include fluid-type(font-size, 18.75em, 78.75em, 1.25em, 1.75em);
+  text-align: center;
+}
+
+.c-title--aqua-forest {
+  color: $aqua-forest;
+}
+
+.c-title--deep-sea {
+  color: $deep-sea;
+}
+
+.c-title--small {
+  font-size: 1.25rem;
+}
+
+@keyframes squiggle {
+  100% {
+    background-position: 62.5% 0;
+  }
+}
+
+.c-title--squiggle::after {
+  animation: 1.5s linear infinite squiggle;
+  background-image: svg-encode('<svg viewBox="0 0 24 10"><path fill="none" stroke="#{$deep-sea}" stroke-width="2" d="M0 1c6 0 6 8 12 8s6-8 12-8"/></svg>');
+  content: "";
+  display: block;
+  height: 0.5em;
+  margin: 0.5em auto 0;
+  width: 5em;
+  will-change: transform;
+
+  .c-section--deep-sea & {
+    background-image: svg-encode('<svg viewBox="0 0 24 10"><path fill="none" stroke="#{$white}" stroke-width="2" d="M0 1c6 0 6 8 12 8s6-8 12-8"/></svg>');
+  }
+}
+
+.c-title__prefix {
+  color: $pablo;
+  display: block;
+  font-size: 0.5em;
+  text-transform: uppercase;
+}

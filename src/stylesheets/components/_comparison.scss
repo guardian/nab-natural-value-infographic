@@ -1,0 +1,59 @@
+.c-comparison {
+  @media (min-width: 48em) {
+    display: flex;
+  }
+}
+
+.c-comparison__column {
+  @include fluid-type(padding, 18.75em, 78.75em, 1.5em, 3em);
+  color: $white;
+
+  @media (min-width: 48em) {
+    flex: 1;
+  }
+}
+
+.c-comparison__column--aqua-forest {
+  background-color: $aqua-forest;
+}
+
+.c-comparison__column--deep-sea {
+  background-color: $deep-sea;
+}
+
+.c-comparison__title {
+  font-size: 1.25em;
+  margin-bottom: 1rem;
+}
+
+.c-comparison-list {}
+
+.c-comparison-list__item {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+
+  &::before {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 87.5%;
+    border-radius: 50%;
+    border: $white solid 0.125em;
+    content: "";
+    flex: none;
+    height: 1.5em;
+    margin-right: 0.5em;
+    transform: translatey(-0.125em);
+    width: 1.5em;
+
+    .c-comparison__column--aqua-forest & {
+      background-image: svg-encode('<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#{$white}"/></svg>');
+    }
+
+    .c-comparison__column--deep-sea & {
+      background-image: svg-encode('<svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#{$white}"/></svg>');
+    }
+  }
+}

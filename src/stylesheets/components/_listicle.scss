@@ -1,0 +1,25 @@
+.c-listicle {
+  @include fluid-type(margin-left margin-top, 18.75em, 78.75em, -2em, -4em);
+
+  @media (min-width: 48em) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.c-listicle__item {
+  @include fluid-type(padding-left padding-top, 18.75em, 78.75em, 2em, 4em);
+  display: flex;
+
+  @media (min-width: 48em) {
+    flex-basis: 50%;
+  }
+}
+
+.c-listicle__image {
+  @include fluid-type(width, 18.75em, 78.75em, 6em, 8em);
+  align-self: flex-start;
+  flex: none;
+  margin-right: 0.5em;
+  will-change: transform;
+}

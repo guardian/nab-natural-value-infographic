@@ -33,7 +33,7 @@ gulp.task('default', callback =>
 )
 
 gulp.task('images', () =>
-  gulp.src('src/images/**/*')
+  gulp.src('src/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dest/images'))
     .on('end', browserSync.reload)
@@ -103,7 +103,7 @@ gulp.task('templates', () =>
 )
 
 gulp.task('watch', ['browser-sync'], () => {
-  gulp.watch('src/images/**/*', ['images'])
+  gulp.watch('src/images/*', ['images'])
   gulp.watch('src/scripts/**/*.js', ['scripts'])
   gulp.watch('src/stylesheets/**/*.scss', ['stylesheets'])
   gulp.watch('src/templates/**/*.njk', ['templates'])

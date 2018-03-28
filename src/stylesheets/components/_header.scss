@@ -1,0 +1,11 @@
+.c-header {
+  @include fluid-type(padding-bottom padding-top, 18.75em, 78.75em, 2em, 8em);
+  background-color: $mercury;
+  flex: none;
+
+  @media (min-width: 37.5em) {
+    background-image: url(/images/header-background.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+}

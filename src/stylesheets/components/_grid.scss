@@ -1,0 +1,17 @@
+.c-grid {
+  @include fluid-type(margin-left, 18.75em, 78.75em, -2em, -4em);
+  @include fluid-type(margin-top, 18.75em, 78.75em, -1em, -2em);
+
+  @media (min-width: 48em) {
+    display: flex;
+  }
+}
+
+.c-grid__column {
+  @include fluid-type(padding-left, 18.75em, 78.75em, 2em, 4em);
+  @include fluid-type(padding-top, 18.75em, 78.75em, 1em, 2em);
+
+  @media (min-width: 48em) {
+    flex: 1;
+  }
+}
